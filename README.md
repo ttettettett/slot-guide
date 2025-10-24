@@ -1,34 +1,27 @@
-# Slot Guide Monorepo
+# Slot Guide Minimal Starter
 
-This repository contains the Slot Guide web application powered by Next.js, Tailwind CSS, and shadcn/ui, managed with pnpm workspaces.
+Firebase App Hosting + Next.js 15 の最小構成です。Google サインインと Cloud Firestore の読み書きを確認するシンプルなノートアプリが含まれます。
 
-## Getting started
+## 必要な環境変数
+App Hosting のビルド環境で以下の公開設定を指定してください。
+
+- `NEXT_PUBLIC_FB_API_KEY`
+- `NEXT_PUBLIC_FB_AUTH_DOMAIN`
+- `NEXT_PUBLIC_FB_PROJECT_ID`
+- `NEXT_PUBLIC_FB_APP_ID`
+- 任意: `NEXT_PUBLIC_USE_FIREBASE_EMULATORS` を `true` にするとローカルエミュレーターに接続します。
+
+Secret Manager には `OPENAI_API_KEY`（例）を用意し、`apphosting.yaml` の設定で参照します。
+
+## コマンド
 
 ```bash
-pnpm install
-pnpm dev
+npm ci
+npm run dev
+npm run build
+npm start
+npm run lint
 ```
 
-## Useful scripts
-
-- `pnpm dev` – run the Next.js development server for `apps/web`
-- `pnpm build` – build the production bundle
-- `pnpm lint` – run ESLint for the web app
-- `pnpm typecheck` – run TypeScript checks
-- `pnpm check` – lint via ESLint and Biome, then build
-- `pnpm format` – format files with Biome
-
-## Project structure
-
-```
-.
-├── apps
-│   └── web        # Next.js application
-├── biome.json     # Biome formatter and linter configuration
-├── package.json   # Workspace scripts and dev dependencies
-└── pnpm-workspace.yaml
-```
-
-## Deployment notes
-
-Deploy the Next.js app from the `apps/web` directory. When deploying to Vercel, set **Root Directory** to `apps/web` and configure the install command (`pnpm install`) and build command (`pnpm run build`).
+## Firestore ルール
+`firestore.rules` では、認証済みユーザー自身のドキュメントのみ読み書きできます。
