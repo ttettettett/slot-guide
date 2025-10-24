@@ -5,6 +5,7 @@ npm-debug.log*
 dist
 .env.local
 .env.*
+!.env.local.example
 .DS_Store
 firebase-debug.log
 storage-debug.log
