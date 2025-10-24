@@ -13,6 +13,14 @@ App Hosting のビルド環境で以下の公開設定を指定してくださ�
 
 Secret Manager には `OPENAI_API_KEY`（例）を用意し、`apphosting.yaml` の設定で参照します。
 
+### ローカル開発
+
+1. Firebase Console でプロジェクトの Web アプリを作成し、構成値（API Key など）を確認します。
+2. リポジトリ直下の `.env.local.example` を `.env.local` にコピーし、取得した値で書き換えます。
+3. `npm run dev` を実行すると、環境変数が読み込まれてサインインや Firestore へのアクセスをテストできます。
+
+Firebase Web Config の値が設定されていない場合、トップページに不足している環境変数が表示されます。
+
 ## コマンド
 
 ```bash
