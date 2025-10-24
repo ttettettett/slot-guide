@@ -1,18 +1,25 @@
 {
   "name": "slot-guide",
-  "private": true,
   "version": "0.1.0",
-  "packageManager": "pnpm@8.15.5",
+  "private": true,
   "scripts": {
-    "dev": "pnpm --filter web dev",
-    "build": "pnpm --filter web build",
-    "lint": "pnpm --filter web lint",
-    "typecheck": "pnpm --filter web typecheck",
-    "format": "pnpm biome format --write",
-    "format:check": "pnpm biome format --check",
-    "check": "pnpm run lint && pnpm run typecheck && pnpm biome check"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "firebase": "^11.0.1",
+    "next": "15.0.3",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.8.3"
+    "@types/node": "22.10.1",
+    "@types/react": "19.0.2",
+    "@types/react-dom": "19.0.2",
+    "eslint": "9.13.0",
+    "eslint-config-next": "15.0.3",
+    "typescript": "5.7.2"
   }
 }
