@@ -3,3 +3,11 @@ entrypoint: npm run start
 secrets:
   - env: OPENAI_API_KEY
     secret: projects/${PROJECT_ID}/secrets/OPENAI_API_KEY/versions/latest
+  - env: NEXT_PUBLIC_FB_API_KEY
+    secret: projects/${PROJECT_ID}/secrets/NEXT_PUBLIC_FB_API_KEY/versions/latest
+  - env: NEXT_PUBLIC_FB_AUTH_DOMAIN
+    secret: projects/${PROJECT_ID}/secrets/NEXT_PUBLIC_FB_AUTH_DOMAIN/versions/latest
+  - env: NEXT_PUBLIC_FB_PROJECT_ID
+    secret: projects/${PROJECT_ID}/secrets/NEXT_PUBLIC_FB_PROJECT_ID/versions/latest
+  - env: NEXT_PUBLIC_FB_APP_ID
+    secret: projects/${PROJECT_ID}/secrets/NEXT_PUBLIC_FB_APP_ID/versions/latest
